@@ -12,10 +12,11 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody rb;
 
 
-    public bool jump = false;
+    //public bool jump = false;
     public bool readyToJump = true;
-    public bool doubleJump;
+    public bool doubleJump = true;
     public bool isGrounded;
+    public int jumpCount = 2;
 
     public float jumpCooldown = 0.4f;
     public float playerHeight = 1f;
@@ -51,17 +52,37 @@ public class PlayerMovement : MonoBehaviour
                 rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
                 readyToJump = false;
                 rb.AddForce(transform.up * m_JumpForce, ForceMode.Impulse);
-
-                Invoke(nameof(ResetJump), jumpCooldown);
+                
+                jumpCount--;
+                Invoke(nameof(resetDoubleJump), jumpCooldown);
             }
-
-
+            else if (!isGrounded && jumpCount > 0 && doubleJump)
+            {
+                if (Input.GetKey(KeyCode.Space))
+                { 
+                    jumpCount--;
+                    rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
+                    doubleJump = false;
+                    rb.AddForce(transform.up * m_JumpForce, ForceMode.Impulse);
+                }
+            }
+            //a
         }
     }
-     
-    private void ResetJump ()
+
+
+    private void OnCollisionEnter(Collision collision)
     {
-        readyToJump = true;
+        if (collision.gameObject.layer == 6)
+        {
+            doubleJump = false;
+            readyToJump = true;
+            jumpCount = 2;
+        }
+    }
+    private void resetDoubleJump ()
+    {
+        doubleJump = true;
     }
 
 

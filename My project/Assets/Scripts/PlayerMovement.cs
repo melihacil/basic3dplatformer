@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
 
-        killEnemy = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, enemyTop);
+        //killEnemy = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, enemyTop);
         isGrounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
         if (isGrounded)
         {
@@ -77,7 +77,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-
+    /*
     private void OnCollisionEnter(Collision collision)
     {
         /*
@@ -90,7 +90,7 @@ public class PlayerMovement : MonoBehaviour
             jumpCount = 2;
         }
 
-        */
+        
         //killEnemy = collision.gameObject.tag == "Enemy";
         //If the player hits enemys top enemy will get damaged
         if (killEnemy)
@@ -103,6 +103,14 @@ public class PlayerMovement : MonoBehaviour
 
         //Add damage enemy after adding health system
     }
+    */
+
+    public void addJumpForce()
+    {
+        rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
+        rb.AddForce(transform.up * m_JumpForce, ForceMode.Impulse);
+    }
+
     private void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject.layer == 6)

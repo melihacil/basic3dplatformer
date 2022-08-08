@@ -45,14 +45,19 @@ public class EnemyAI : MonoBehaviour
     {
         //Checks if the player is in radius of enemy
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
-        //playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
+        playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
         if (!playerInSightRange)
         {
-            Patrolling();
+            //Patrolling();
         }
-        else 
+        else if (playerInSightRange && !playerInAttackRange)
         {
             ChasePlayer();
+        }
+        else if (playerInAttackRange)
+        {
+            //agent.Stop();
+            agent.SetDestination(transform.position);
         }
     }
 

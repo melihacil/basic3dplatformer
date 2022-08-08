@@ -24,10 +24,6 @@ public class PlayerMovement : MonoBehaviour
     public float m_Speed = 5f;
     public float m_JumpForce = 4f;
 
-
-
-
-
     public LayerMask whatIsGround, enemyTop;
     // Start is called before the first frame update
     void Start()
@@ -95,7 +91,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         */
-
+        //killEnemy = collision.gameObject.tag == "Enemy";
         //If the player hits enemys top enemy will get damaged
         if (killEnemy)
         {

@@ -13,7 +13,7 @@ public class EnemyAI : MonoBehaviour
 
     public LayerMask whatIsGround, whatIsPlayer;
 
-
+    public Rigidbody rb;
     //Patrolling
     [Header("Patrol")]
     public Vector3 walkPoint;
@@ -37,7 +37,7 @@ public class EnemyAI : MonoBehaviour
     }
     void Start()
     {
-        
+        rb.freezeRotation = true;
     }
 
     // Update is called once per frame
@@ -45,21 +45,15 @@ public class EnemyAI : MonoBehaviour
     {
         //Checks if the player is in radius of enemy
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
-        playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
+        //playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
         if (!playerInSightRange)
         {
             Patrolling();
         }
-        else if (playerInSightRange && !playerInAttackRange)
+        else 
         {
             ChasePlayer();
-
         }
-        else if (playerInAttackRange)
-        {
-            //Attack player()
-        }
-
     }
 
 

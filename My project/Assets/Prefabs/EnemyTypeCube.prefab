@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5191420550869083907}
   - component: {fileID: 5191420550869083906}
   - component: {fileID: 5191420550869083896}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: EnemyTypeCube
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -159,6 +159,7 @@ MonoBehaviour:
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 128
+  rb: {fileID: 5191420550869083907}
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointSet: 0
   walkPointRange: 5

@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     public bool isGrounded;
     public int jumpCount = 2;
 
-    public float jumpCooldown = 0.4f;
+    public float jumpCooldown = 0.2f;
     public float playerHeight = 1f;
     public float m_Speed = 5f;
     public float m_JumpForce = 4f;
@@ -35,8 +35,13 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
 
-        //isGrounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
-
+        isGrounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
+        if (isGrounded)
+        {
+            doubleJump = false;
+            readyToJump = true;
+            jumpCount = 2;
+        }
         verticalInput = Input.GetAxisRaw("Vertical");
         horizontalInput = Input.GetAxisRaw("Horizontal");
     }
@@ -55,6 +60,7 @@ public class PlayerMovement : MonoBehaviour
                 
                 jumpCount--;
                 Invoke(nameof(resetDoubleJump), jumpCooldown);
+                
             }
             else if (!isGrounded && jumpCount > 0 && doubleJump)
             {
@@ -73,6 +79,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        /*
+         * Has problems
         if (collision.gameObject.layer == 6)
         {
             isGrounded = true;
@@ -80,13 +88,18 @@ public class PlayerMovement : MonoBehaviour
             readyToJump = true;
             jumpCount = 2;
         }
+
+        */
+
+        if (collision.gameObject.tag == "Enemy") 
+            Destroy(collision.gameObject);
     }
     private void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject.layer == 6)
         {
             isGrounded = false;
-
+            //doubleJump = true;
         }
     }
     private void resetDoubleJump ()

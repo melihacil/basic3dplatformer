@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     public bool readyToJump = true;
     public bool doubleJump = true;
     public bool isGrounded;
+    public bool killEnemy;
     public int jumpCount = 2;
 
     public float jumpCooldown = 0.2f;
@@ -24,7 +25,10 @@ public class PlayerMovement : MonoBehaviour
     public float m_JumpForce = 4f;
 
 
-    public LayerMask whatIsGround;
+
+
+
+    public LayerMask whatIsGround, enemyTop;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
 
+        killEnemy = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, enemyTop);
         isGrounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
         if (isGrounded)
         {
@@ -91,8 +96,16 @@ public class PlayerMovement : MonoBehaviour
 
         */
 
-        if (collision.gameObject.tag == "Enemy") 
+        //If the player hits enemys top enemy will get damaged
+        if (killEnemy)
+        {
             Destroy(collision.gameObject);
+            rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
+            rb.AddForce(transform.up * m_JumpForce, ForceMode.Impulse);
+        }
+        killEnemy = false;
+
+        //Add damage enemy after adding health system
     }
     private void OnCollisionExit(Collision collision)
     {

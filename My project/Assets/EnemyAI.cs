@@ -50,15 +50,17 @@ public class EnemyAI : MonoBehaviour
         {
             //Patrolling();
         }
-        else if (playerInSightRange && !playerInAttackRange)
+        else if (playerInSightRange )//&& !playerInAttackRange)
         {
             ChasePlayer();
         }
+        /*
         else if (playerInAttackRange)
         {
             //agent.Stop();
             agent.SetDestination(transform.position);
         }
+        */
     }
 
 
@@ -98,6 +100,6 @@ public class EnemyAI : MonoBehaviour
     {
         if (agent.isStopped)
             agent.isStopped = false;
-        agent.SetDestination(player.position);
+        agent.SetDestination(new Vector3(player.position.x,0,player.position.z));
     }
 }

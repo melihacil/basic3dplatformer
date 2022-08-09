@@ -19,10 +19,14 @@ public class PlayerMovement : MonoBehaviour
     public bool killEnemy;
     public int jumpCount = 2;
 
+    [Header("Values")]
     public float jumpCooldown = 0.2f;
     public float playerHeight = 1f;
     public float m_Speed = 5f;
     public float m_JumpForce = 4f;
+    public float damagedForce = 5f;
+
+
 
     public LayerMask whatIsGround, enemyTop;
     // Start is called before the first frame update
@@ -77,33 +81,21 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    /*
+    
     private void OnCollisionEnter(Collision collision)
     {
-        /*
-         * Has problems
-        if (collision.gameObject.layer == 6)
+        if (collision.gameObject.tag == "Enemy")
         {
-            isGrounded = true;
-            doubleJump = false;
-            readyToJump = true;
-            jumpCount = 2;
-        }
-
-        
-        //killEnemy = collision.gameObject.tag == "Enemy";
-        //If the player hits enemys top enemy will get damaged
-        if (killEnemy)
-        {
-            Destroy(collision.gameObject);
+            Debug.Log("Got Hit");
+            Vector3 moveDirection = rb.transform.position- collision.transform.position;
+            rb.AddForce(moveDirection.normalized * damagedForce);
+            //rb.AddForce(transform.forward * -1 * damagedForce, ForceMode.Impulse);
+           // rb.AddForce(moveDirection.normalized * -damagedForce, ForceMode.Impulse);
             rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
             rb.AddForce(transform.up * m_JumpForce, ForceMode.Impulse);
         }
-        killEnemy = false;
-
-        //Add damage enemy after adding health system
     }
-    */
+    
 
     public void addJumpForce()
     {

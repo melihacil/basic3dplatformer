@@ -16,7 +16,7 @@ public class PlayerStats : MonoBehaviour
 
     
     public UnityEvent<float> healthBar;
-    public UnityEvent<int> coinNumber;
+    //public UnityEvent<int> coinNumber;
     private void Start()
     {
         currentHealth = maxHealth;

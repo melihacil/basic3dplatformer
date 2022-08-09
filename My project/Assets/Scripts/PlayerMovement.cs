@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     Rigidbody rb;
 
-
+    
     //public bool jump = false;
     public bool readyToJump = true;
     public bool doubleJump = true;
@@ -86,6 +86,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
+            GetComponentInParent<PlayerStats>().damagePlayer(20);
             Debug.Log("Got Hit");
             Vector3 moveDirection = rb.transform.position- collision.transform.position;
             rb.AddForce(moveDirection.normalized * damagedForce);

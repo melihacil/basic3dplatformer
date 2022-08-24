@@ -50,17 +50,16 @@ public class EnemyAI : MonoBehaviour
         {
             //Patrolling();
         }
-        else if (playerInSightRange )//&& !playerInAttackRange)
+        else if (playerInSightRange && !playerInAttackRange)
         {
             ChasePlayer();
         }
-        /*
         else if (playerInAttackRange)
         {
             //agent.Stop();
             agent.SetDestination(transform.position);
         }
-        */
+        
     }
 
     private void OnCollisionEnter(Collision collision)

@@ -81,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    
+    /*
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Enemy")
@@ -91,17 +91,17 @@ public class PlayerMovement : MonoBehaviour
             GetDamaged(collision.transform);
         }
     }
-    
+    */
 
     public void GetDamaged(Transform enemyTransform)
     {
         Vector3 moveDirection = enemyTransform.position - rb.transform.position;
         //enemyTransform.transform.position
-        rb.velocity = new Vector3(0, 0, 0);
+        //rb.velocity = new Vector3(0, 0, 0);
         rb.AddForce(moveDirection.normalized * damagedForce);
         //rb.AddForce(transform.forward * -1 * damagedForce, ForceMode.Impulse);
         // rb.AddForce(moveDirection.normalized * -damagedForce, ForceMode.Impulse);
-        //rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
+        rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
         rb.AddForce(transform.up * m_JumpForce, ForceMode.Impulse);
     }
 

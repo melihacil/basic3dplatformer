@@ -63,7 +63,17 @@ public class EnemyAI : MonoBehaviour
         */
     }
 
-
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            //GetComponentInParent<PlayerStats>().damagePlayer(20);
+            collision.gameObject.GetComponentInParent<PlayerStats>().damagePlayer(20);
+            Debug.Log("Got Hit");
+            //GetDamaged(collision.transform);
+            collision.gameObject.GetComponent<PlayerMovement>().GetDamaged(this.transform);
+        }
+    }
     private void Patrolling()
     {
         if (!walkPointSet)

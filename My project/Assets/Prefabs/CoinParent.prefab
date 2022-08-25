@@ -126,6 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95bb28606a0dd54e97cdaf7e4698777, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinValue: 4
 --- !u!95 &6440770456958099696
 Animator:
   serializedVersion: 4

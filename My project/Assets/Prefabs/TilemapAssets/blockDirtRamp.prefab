@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3894299678655780312}
   - component: {fileID: 1292431547833704722}
   - component: {fileID: 8848020103844065250}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: blockDirtRamp
   m_TagString: Untagged
   m_Icon: {fileID: 0}

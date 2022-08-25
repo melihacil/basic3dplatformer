@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6955303250713449168}
   - component: {fileID: 5143889491789211162}
   - component: {fileID: 4605277558916440198}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: blockSnowLevel
   m_TagString: Untagged
   m_Icon: {fileID: 0}

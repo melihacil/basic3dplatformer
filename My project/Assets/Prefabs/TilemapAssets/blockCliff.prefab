@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5737534040351003822}
   - component: {fileID: 7528654660501348452}
   - component: {fileID: 4538687296954568951}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: blockCliff
   m_TagString: Untagged
   m_Icon: {fileID: 0}

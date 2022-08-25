@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 910506664885939476}
   - component: {fileID: 3118236645492922846}
   - component: {fileID: 5924753636244759099}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: blockCliffCorner
   m_TagString: Untagged
   m_Icon: {fileID: 0}

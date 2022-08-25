@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class CoinScript : MonoBehaviour
 {
-
+    [SerializeField]
+    private int coinValue = 1;
 
     private void Update()
     {

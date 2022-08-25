@@ -34,9 +34,9 @@ public class PlayerStats : MonoBehaviour
     {
         currentHealth -= damage;
     }
-    public void upCoin()
+    public void upCoin(int coinValue)
     {
-        Coins++;
+        Coins += coinValue;
         Debug.Log("Coins =" + Coins);
     }
 }

@@ -9,8 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2512015359792435959}
-  - component: {fileID: 1229323838513918682}
-  - component: {fileID: 8985408442080053302}
   - component: {fileID: 7305811672591898390}
   m_Layer: 0
   m_Name: coinBronze
@@ -35,32 +33,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1229323838513918682
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2997048818822842445}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
---- !u!114 &8985408442080053302
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2997048818822842445}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c95bb28606a0dd54e97cdaf7e4698777, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &7305811672591898390
 Animator:
   serializedVersion: 4
@@ -92,6 +64,8 @@ GameObject:
   - component: {fileID: 5726048321105263200}
   - component: {fileID: 8176285067830678155}
   - component: {fileID: 4058909758447470795}
+  - component: {fileID: 1765315056559467260}
+  - component: {fileID: 3321717161350036174}
   m_Layer: 0
   m_Name: coinBronze
   m_TagString: Untagged
@@ -165,3 +139,30 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1765315056559467260
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4463608998655212223}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1494728695597288413, guid: da0a557c8ac5d8747a095a0af82cfba1, type: 3}
+--- !u!114 &3321717161350036174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4463608998655212223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c95bb28606a0dd54e97cdaf7e4698777, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinValue: 1

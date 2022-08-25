@@ -20,7 +20,7 @@ public class CoinScript : MonoBehaviour
             Debug.Log("Got one more Coin!");
             Destroy(gameObject);
             //collision.gameObject.GetComponent<PlayerStats>().upCoin();
-            collision.gameObject.GetComponentInParent<PlayerStats>().upCoin();
+            collision.gameObject.GetComponentInParent<PlayerStats>().upCoin(coinValue);
         }
     }
 }

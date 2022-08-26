@@ -5,14 +5,18 @@ using UnityEngine;
 public class GateScript : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
+    private void OnCollisionEnter(Collision collision)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (collision.gameObject.tag == "Player")
+        {
+            if (collision.gameObject.GetComponentInParent<PlayerStats>().hasKey)
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+                Debug.Log("No key");
+            }
+        }
     }
 }

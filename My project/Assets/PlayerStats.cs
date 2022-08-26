@@ -14,6 +14,8 @@ public class PlayerStats : MonoBehaviour
     // Start is called before the first frame update
     public Text coinText;
 
+    [SerializeField]
+    private Transform playerTransform;
     
     public UnityEvent<float> healthBar;
     //public UnityEvent<int> coinNumber;
@@ -28,6 +30,7 @@ public class PlayerStats : MonoBehaviour
     {
         healthBar.Invoke(currentHealth / maxHealth);
         coinText.text = "Coins = " + Coins;
+        gameObject.transform.position = playerTransform.position;
     }
 
     public void damagePlayer(float damage)

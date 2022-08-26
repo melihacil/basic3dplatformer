@@ -5,14 +5,12 @@ using UnityEngine;
 public class KeyScript : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
+    private void OnCollisionEnter(Collision collision)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (collision.gameObject.tag == "Player")
+        {
+            collision.gameObject.GetComponentInParent<PlayerStats>().hasKey = true;
+            collision.gameObject.GetComponentInParent<PlayerStats>().GotKey();
+        }
     }
 }

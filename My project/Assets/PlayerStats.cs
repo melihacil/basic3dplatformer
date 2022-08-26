@@ -16,7 +16,8 @@ public class PlayerStats : MonoBehaviour
     // Start is called before the first frame update
     public Text coinText;
 
-
+    [SerializeField]
+    private Text keyText;
     
     public UnityEvent<float> healthBar;
     //public UnityEvent<int> coinNumber;
@@ -42,4 +43,15 @@ public class PlayerStats : MonoBehaviour
         Coins += coinValue;
         Debug.Log("Coins =" + Coins);
     }
+
+    public void GotKey()
+    {
+        keyText.enabled = true;
+        Invoke("DisableText(keyText)", 2f);
+    }
+    private void DisableText(Text text)
+    {
+        text.enabled = false;
+    }
+
 }

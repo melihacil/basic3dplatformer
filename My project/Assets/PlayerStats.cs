@@ -49,7 +49,7 @@ public class PlayerStats : MonoBehaviour
     public void GotKey()
     {
         keyText.enabled = true;
-        //Invoke("DisableText", 2f);
+        Invoke("DisableText", 2f);
     }
     private void DisableText()
     {

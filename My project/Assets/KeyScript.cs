@@ -11,6 +11,9 @@ public class KeyScript : MonoBehaviour
         {
             collision.gameObject.GetComponentInParent<PlayerStats>().hasKey = true;
             collision.gameObject.GetComponentInParent<PlayerStats>().GotKey();
+            Destroy(gameObject);
         }
-    }
+
+
+}
 }

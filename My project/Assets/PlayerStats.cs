@@ -26,6 +26,8 @@ public class PlayerStats : MonoBehaviour
         currentHealth = maxHealth;
         healthBar?.Invoke(1);
         coinText.text = "Coins = " + Coins;
+        keyText.enabled = false;
+        
     }
 
     private void Update()
@@ -47,11 +49,11 @@ public class PlayerStats : MonoBehaviour
     public void GotKey()
     {
         keyText.enabled = true;
-        Invoke("DisableText(keyText)", 2f);
+        //Invoke("DisableText", 2f);
     }
-    private void DisableText(Text text)
+    private void DisableText()
     {
-        text.enabled = false;
+        keyText.enabled = false;
     }
 
 }

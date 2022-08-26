@@ -11,6 +11,8 @@ public class PlayerStats : MonoBehaviour
     public float currentHealth;
     public float maxHealth = 100;
     public int Coins = 0;
+
+    public bool hasKey = false;
     // Start is called before the first frame update
     public Text coinText;
 

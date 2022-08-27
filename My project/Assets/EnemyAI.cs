@@ -14,7 +14,7 @@ public class EnemyAI : MonoBehaviour
     public LayerMask whatIsGround, whatIsPlayer;
 
     public Rigidbody rb;
-    //Patrolling
+
     [Header("Patrol")]
     public Vector3 walkPoint;
     public bool walkPointSet;
@@ -22,7 +22,10 @@ public class EnemyAI : MonoBehaviour
     public GameObject projectile;
 
 
-
+    [Header("Attack Options")]
+    public bool isBomber = false;
+    public bool alreadyAttacked = false;
+    public float timeBetweenAttacks = 1.5f;
     [Header("States")]
     public float sightRange, attackRange;
     public bool playerInSightRange, playerInAttackRange;
@@ -48,7 +51,7 @@ public class EnemyAI : MonoBehaviour
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
         if (!playerInSightRange)
         {
-            //Patrolling();
+            Patrolling();
         }
         else if (playerInSightRange && !playerInAttackRange)
         {
@@ -66,7 +69,7 @@ public class EnemyAI : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            //GetComponentInParent<PlayerStats>().damagePlayer(20);
+            //Gets the player damaged
             collision.gameObject.GetComponentInParent<PlayerStats>().damagePlayer(20);
             Debug.Log("Got Hit");
             //GetDamaged(collision.transform);
@@ -110,5 +113,39 @@ public class EnemyAI : MonoBehaviour
         if (agent.isStopped)
             agent.isStopped = false;
         agent.SetDestination(new Vector3(player.position.x,0,player.position.z));
+    }
+
+
+    private void AttackPlayer()
+    {
+        agent.SetDestination(transform.position);
+
+
+
+        transform.LookAt(player);
+
+        if (!alreadyAttacked)
+        {
+            //Attacking code
+            if (isBomber)
+            {
+                Rigidbody rb = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
+
+                rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
+                rb.AddForce(transform.up * 8, ForceMode.Impulse);
+            }
+
+            alreadyAttacked = true;
+            Invoke(nameof(ResetAttack), timeBetweenAttacks);
+        }
+
+
+
+    }
+
+
+    private void ResetAttack()
+    {
+       alreadyAttacked = false;
     }
 }

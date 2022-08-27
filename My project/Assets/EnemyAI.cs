@@ -60,20 +60,24 @@ public class EnemyAI : MonoBehaviour
         else if (playerInAttackRange)
         {
             //agent.Stop();
-            agent.SetDestination(transform.position);
+            AttackPlayer();
         }
         
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" && !isBomber)
         {
             //Gets the player damaged
             collision.gameObject.GetComponentInParent<PlayerStats>().damagePlayer(20);
             Debug.Log("Got Hit");
             //GetDamaged(collision.transform);
             collision.gameObject.GetComponent<PlayerMovement>().GetDamaged(this.transform);
+        }
+        else if (isBomber && collision.gameObject.tag == "Player")
+        {
+            Destroy(gameObject);
         }
     }
     private void Patrolling()
@@ -121,14 +125,17 @@ public class EnemyAI : MonoBehaviour
         agent.SetDestination(transform.position);
 
 
-
-        transform.LookAt(player);
+        if (isBomber)
+            transform.LookAt(player);
+        //transform.LookAt(player);
 
         if (!alreadyAttacked)
         {
             //Attacking code
             if (isBomber)
             {
+                
+                Debug.Log("Attacking");
                 Rigidbody rb = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
 
                 rb.AddForce(transform.forward * 32f, ForceMode.Impulse);

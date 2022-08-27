@@ -76,11 +76,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 5191420550869083905}
-  enemyHeight: 0.5
-  isPlayer: 0
-  whatIsPlayer:
-    serializedVersion: 2
-    m_Bits: 128
 --- !u!1 &5191420550869083905
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,7 +240,10 @@ MonoBehaviour:
   walkPointSet: 0
   walkPointRange: 5
   projectile: {fileID: 0}
+  isBomber: 0
+  alreadyAttacked: 0
+  timeBetweenAttacks: 2
   sightRange: 10
-  attackRange: 2
+  attackRange: 0.5
   playerInSightRange: 0
   playerInAttackRange: 0

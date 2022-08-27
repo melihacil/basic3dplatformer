@@ -114,9 +114,9 @@ public class PlayerMovement : MonoBehaviour
         //Adds a force in the opposite direction of the enemy
         Vector3 moveDirection = enemyTransform.position - rb.transform.position;
 
-        rb.AddForce(moveDirection.normalized * damagedForce);
+        rb.AddForce(moveDirection.normalized * damagedForce * 3);
         rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
-        rb.AddForce(transform.up * m_JumpForce, ForceMode.Impulse);
+        rb.AddForce(transform.up * m_JumpForce * 2, ForceMode.Impulse);
     }
 
     public void addJumpForce()

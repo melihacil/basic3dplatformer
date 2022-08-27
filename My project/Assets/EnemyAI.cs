@@ -25,7 +25,7 @@ public class EnemyAI : MonoBehaviour
     [Header("Attack Options")]
     public bool isBomber = false;
     public bool alreadyAttacked = false;
-    public float timeBetweenAttacks = 1.5f;
+    public float timeBetweenAttacks = 2f;
     [Header("States")]
     public float sightRange, attackRange;
     public bool playerInSightRange, playerInAttackRange;
@@ -139,7 +139,7 @@ public class EnemyAI : MonoBehaviour
                 Rigidbody rb = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
 
                 rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
-                rb.AddForce(transform.up * 8, ForceMode.Impulse);
+                rb.AddForce(transform.up * 16, ForceMode.Impulse);
             }
 
             alreadyAttacked = true;

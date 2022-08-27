@@ -38,7 +38,10 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (rb.position.y < -2)
+        {
+            ResetPlayerPosition();
+        }
         //killEnemy = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, enemyTop);
         isGrounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.3f, whatIsGround);
         if (isGrounded)
@@ -92,6 +95,13 @@ public class PlayerMovement : MonoBehaviour
         }
     }
     */
+
+
+    private void ResetPlayerPosition()
+    {
+        rb.position = new Vector3(-5, -2, 1);
+    }
+
 
     public void GetDamaged(Transform enemyTransform)
     {

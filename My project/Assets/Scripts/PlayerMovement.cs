@@ -105,6 +105,7 @@ public class PlayerMovement : MonoBehaviour
        // gameObject.transform = new Vector3(-5, -2, 1);
 
         gameObject.transform.position = startPos.position;
+        GetComponentInParent<PlayerStats>().damagePlayer(20);
     }
 
 

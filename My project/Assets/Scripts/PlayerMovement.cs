@@ -27,6 +27,9 @@ public class PlayerMovement : MonoBehaviour
     public float damagedForce = 5f;
 
 
+    [Header("Start_Position")]
+    public Transform startPos;
+
 
     public LayerMask whatIsGround, enemyTop;
     // Start is called before the first frame update
@@ -38,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (rb.position.y < -2)
+        if (gameObject.transform.position.y < -4)
         {
             ResetPlayerPosition();
         }
@@ -99,7 +102,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void ResetPlayerPosition()
     {
-        rb.position = new Vector3(-5, -2, 1);
+       // gameObject.transform = new Vector3(-5, -2, 1);
+
+        gameObject.transform.position = startPos.position;
     }
 
 

@@ -246,3 +246,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particle: {fileID: 0}
+  explosion: {fileID: 6782383149445350550, guid: 854310c19019f264487841e1b9733425, type: 3}

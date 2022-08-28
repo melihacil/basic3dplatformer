@@ -12,6 +12,7 @@ public class BombScript : MonoBehaviour
     {
         gameObject.SetActive(false);
         //Instantiate(particle, transform);
+        explosion.transform.position = transform.position;
         explosion.Play();
         //Destroy(gameObject);
     }

@@ -6,9 +6,12 @@ public class BombScript : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject particle;
+
+    public ParticleSystem explosion;
     private void OnCollisionEnter(Collision collision)
     {
-        Instantiate(particle, transform);
+        //Instantiate(particle, transform);
+        explosion.Play();
         Destroy(gameObject);
     }
 }

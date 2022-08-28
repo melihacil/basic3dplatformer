@@ -32,16 +32,19 @@ public class EnemyAI : MonoBehaviour
     public bool playerInSightRange, playerInAttackRange;
     // Start is called before the first frame update
 
+    private ObjectPool objectPool;
 
     private void Awake()
     {
         //Assigning important stuff
         //player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
+        objectPool = GetComponent<ObjectPool>();
     }
     void Start()
     {
         rb.freezeRotation = true;
+        objectPool.Initialize(projectile, 5);
     }
 
     // Update is called once per frame
@@ -137,7 +140,12 @@ public class EnemyAI : MonoBehaviour
             {
                 
                 Debug.Log("Attacking");
-                Rigidbody rb = Instantiate(projectile, shootingPoint.position, Quaternion.identity).GetComponent<Rigidbody>();
+                //Rigidbody rb = Instantiate(projectile, shootingPoint.position, Quaternion.identity).GetComponent<Rigidbody>();
+
+                var bomb = objectPool.CreateObject();
+                bomb.transform.position = shootingPoint.position;
+                bomb.transform.rotation = shootingPoint.rotation;
+                Rigidbody rb = bomb.GetComponent<Rigidbody>();
                 // Can be made scaling with distance !! Vector3.Distance(transform.position, player.position);
                 rb.AddForce(shootingPoint.forward * 6f, ForceMode.Impulse);
                 rb.AddForce(shootingPoint.up * 8f, ForceMode.Impulse);

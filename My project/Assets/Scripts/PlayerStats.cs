@@ -39,6 +39,24 @@ public class PlayerStats : MonoBehaviour
     public void damagePlayer(float damage)
     {
         currentHealth -= damage;
+        if (currentHealth < 0)
+        {
+            Debug.Log("Dead");
+            Invoke(nameof(Death_Function), 2f);
+        }
+    }
+
+    public void healPlayer(float value)
+    {
+        currentHealth += value;
+        if (currentHealth > maxHealth)
+            currentHealth = maxHealth;
+    }
+
+
+    public void Death_Function()
+    {
+        Destroy(gameObject);
     }
     public void upCoin(int coinValue)
     {

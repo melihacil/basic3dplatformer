@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 2891843103496332504}
   - component: {fileID: 1136337239075131410}
   - component: {fileID: 8562793326076943945}
+  - component: {fileID: 3306128713326733905}
+  - component: {fileID: 8935752711115863200}
   m_Layer: 0
   m_Name: heart
   m_TagString: Untagged
@@ -98,3 +100,35 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 8087458221035121081, guid: 4e2a72e54093a4a46a5455cfd4f0125c, type: 3}
+--- !u!95 &3306128713326733905
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1496858375364850119}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f517cf87a05ba58439f04bf5c80d5718, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8935752711115863200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1496858375364850119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebe40593ef9cc1d43afc7db069d8daf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

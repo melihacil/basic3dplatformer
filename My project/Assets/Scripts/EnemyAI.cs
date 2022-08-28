@@ -10,6 +10,7 @@ public class EnemyAI : MonoBehaviour
     public NavMeshAgent agent;
 
     public Transform player;
+    public Transform shootingPoint;
 
     public LayerMask whatIsGround, whatIsPlayer;
 
@@ -136,10 +137,10 @@ public class EnemyAI : MonoBehaviour
             {
                 
                 Debug.Log("Attacking");
-                Rigidbody rb = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
-
-                rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
-                rb.AddForce(transform.up * 16, ForceMode.Impulse);
+                Rigidbody rb = Instantiate(projectile, shootingPoint.position, Quaternion.identity).GetComponent<Rigidbody>();
+                // Can be made scaling with distance !! Vector3.Distance(transform.position, player.position);
+                rb.AddForce(shootingPoint.forward * 6f, ForceMode.Impulse);
+                rb.AddForce(shootingPoint.up * 8f, ForceMode.Impulse);
             }
 
             alreadyAttacked = true;

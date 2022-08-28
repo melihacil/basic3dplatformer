@@ -44,7 +44,8 @@ public class EnemyAI : MonoBehaviour
     void Start()
     {
         rb.freezeRotation = true;
-        objectPool.Initialize(projectile, 5);
+        if (isBomber)
+            objectPool.Initialize(projectile, 5);
     }
 
     // Update is called once per frame

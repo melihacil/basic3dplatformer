@@ -10,8 +10,9 @@ public class BombScript : MonoBehaviour
     public ParticleSystem explosion;
     private void OnCollisionEnter(Collision collision)
     {
+        gameObject.SetActive(false);
         //Instantiate(particle, transform);
         explosion.Play();
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 }

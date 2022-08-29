@@ -26,7 +26,7 @@ public class EnemyAI : MonoBehaviour
     [Header("Attack Options")]
     public bool isBomber = false;
     public bool alreadyAttacked = false;
-    public float timeBetweenAttacks = 2f;
+    public float timeBetweenAttacks = 3f;
     [Header("States")]
     public float sightRange, attackRange;
     public bool playerInSightRange, playerInAttackRange;

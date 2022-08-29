@@ -4,21 +4,52 @@ using UnityEngine;
 
 public class BombScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public GameObject particle;
+    public Transform player;
+    public float radius = 2f;
 
-    public ParticleSystem explosion;
     private void OnCollisionEnter(Collision collision)
     {
-        // gameObject.SetActive(false);
-        //explosion.Play();
-        /*
-        Instantiate(explosion,transform.position,transform.rotation);
-        explosion.Play();
-        explosion.GetComponent<ParticleSystem>();
-        */
 
         if (!GetComponent<ParticleSystem>().isPlaying)
             GetComponent<ParticleSystem>().Play();
+
+        float dist = Vector3.Distance(transform.position, player.position);
+
+        if (dist <= radius)
+        {
+            player.GetComponentInParent<PlayerStats>().damagePlayer(30);
+        }
+
+
+
+
+        GetComponent<MeshRenderer>().enabled = false;
+        GetComponentInChildren<Light>().enabled = false;
+        Invoke(nameof(SetVisibility), 2f);
+
+        /* If you want stuff to blow up this is the way to go
+        Collider[] colliders = Physics.OverlapSphere(transform.position, radius);
+
+        foreach(Collider nearbyObject in colliders)
+        {
+            if ()
+
+        }
+        */
+
+        //But to just check if player is in radius just shoot a ray to player
+        
+
+
      }
+
+
+
+    private void SetVisibility()
+    {
+        GetComponent<ParticleSystem>().Stop();
+        GetComponent<MeshRenderer>().enabled = true;
+        GetComponentInChildren<Light>().enabled = true;
+        gameObject.SetActive(false);
+    }
 }

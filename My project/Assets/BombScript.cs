@@ -5,7 +5,7 @@ using UnityEngine;
 public class BombScript : MonoBehaviour
 {
     public Transform player;
-    public float radius = 2f;
+    public float radius = 1.5f;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -13,35 +13,30 @@ public class BombScript : MonoBehaviour
         if (!GetComponent<ParticleSystem>().isPlaying)
             GetComponent<ParticleSystem>().Play();
 
-        float dist = Vector3.Distance(transform.position, player.position);
-
-        if (dist <= radius)
-        {
-            player.GetComponentInParent<PlayerStats>().damagePlayer(30);
-        }
-
-
+        
 
 
         GetComponent<MeshRenderer>().enabled = false;
         GetComponentInChildren<Light>().enabled = false;
         Invoke(nameof(SetVisibility), 2f);
 
-        /* If you want stuff to blow up this is the way to go
-        Collider[] colliders = Physics.OverlapSphere(transform.position, radius);
 
-        foreach(Collider nearbyObject in colliders)
+        //Raycast can be used too
+
+        //this code block can be used for exploding world objects too
+        Collider[] colliders = Physics.OverlapSphere(transform.position, radius);
+        foreach (Collider nearbyObject in colliders)
         {
-            if ()
+            if (nearbyObject.gameObject.tag == "Player")
+            {
+                Debug.Log("Wow");
+                nearbyObject.gameObject.GetComponentInParent<PlayerStats>().damagePlayer(30);
+                break;
+            }
 
         }
-        */
 
-        //But to just check if player is in radius just shoot a ray to player
-        
-
-
-     }
+    }
 
 
 

@@ -21,7 +21,7 @@ public class LevelLoader : MonoBehaviour
         while (!operation.isDone)
         {
 
-            float progress = Mathf.Clamp01((operation.progress / 9);
+            float progress = Mathf.Clamp01(operation.progress / 9);
             Debug.Log(progress);
             yield return null;
         }

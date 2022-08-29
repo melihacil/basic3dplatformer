@@ -247,8 +247,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f3ea3cf65252ea4f9d58888180573fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particle: {fileID: 0}
-  explosion: {fileID: 6782383149445350550, guid: 854310c19019f264487841e1b9733425, type: 3}
+  player: {fileID: 5167141353974739785, guid: 5de48008e31fca14bb5d0f8e4fc201da, type: 3}
+  radius: 2
 --- !u!199 &-6336680367245755132
 ParticleSystemRenderer:
   serializedVersion: 6

@@ -59,7 +59,7 @@ public class BombScript : MonoBehaviour
         GetComponent<ParticleSystem>().Stop();
         GetComponent<MeshRenderer>().enabled = true;
         GetComponentInChildren<Light>().enabled = true;
-        //GetComponent<BoxCollider>().enabled = true;
+        GetComponent<BoxCollider>().enabled = true;
         damaged = false;
         checkCollision = false;
         gameObject.SetActive(false);

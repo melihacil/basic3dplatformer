@@ -5,7 +5,7 @@ using UnityEngine;
 public class BombScript : MonoBehaviour
 {
     public Transform player;
-    public float radius = 1.5f;
+    public float radius = 0.5f;
 
     private void OnCollisionEnter(Collision collision)
     {

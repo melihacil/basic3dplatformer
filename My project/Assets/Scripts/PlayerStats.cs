@@ -39,7 +39,7 @@ public class PlayerStats : MonoBehaviour
     public void damagePlayer(float damage)
     {
         currentHealth -= damage;
-        if (currentHealth < 0)
+        if (currentHealth <= 0)
         {
             Debug.Log("Dead");
             Invoke(nameof(Death_Function), 2f);

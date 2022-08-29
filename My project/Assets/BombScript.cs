@@ -11,6 +11,14 @@ public class BombScript : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         // gameObject.SetActive(false);
+        //explosion.Play();
+        /*
+        Instantiate(explosion,transform.position,transform.rotation);
         explosion.Play();
-    }
+        explosion.GetComponent<ParticleSystem>();
+        */
+
+        if (!GetComponent<ParticleSystem>().isPlaying)
+            GetComponent<ParticleSystem>().Play();
+     }
 }

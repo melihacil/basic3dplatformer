@@ -6,7 +6,7 @@ public class SoundManager : MonoBehaviour
 {
 
     public AudioClip[] clips;
-    
+    public AudioSource[] source;
     
     //For playing sounds
     
@@ -16,6 +16,8 @@ public class SoundManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         
     }
+
+
 
 
 

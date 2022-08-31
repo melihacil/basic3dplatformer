@@ -14,18 +14,15 @@ public class SoundManager : MonoBehaviour
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
-        
-    }
-
-    private void Start()
-    {
         if (source == null)
         {
             source = new AudioSource[10];
             for (int i = 0; i < source.Length; i++)
                 source[i] = new AudioSource();
         }
+        
     }
+
 
     public void PlayClip(int index,int sourceIndex)
     {

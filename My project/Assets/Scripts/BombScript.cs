@@ -30,9 +30,6 @@ public class BombScript : MonoBehaviour
         {
             GetComponent<BoxCollider>().enabled = false;
         }
-
-
-
     }
 
     private void ExplosionCheck()

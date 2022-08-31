@@ -50,16 +50,5 @@ public class SoundManager : MonoBehaviour
         s.source.volume = vol;
     }
 
-    public void PlayClip(int index,int sourceIndex)
-    {
-        
-
-    }
-
-    public void PlayClipOneShot(int index)
-    {
-       
-    }
-
     
 }

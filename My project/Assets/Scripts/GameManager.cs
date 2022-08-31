@@ -9,7 +9,8 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        DontDestroyOnLoad(gameObject);  
+        DontDestroyOnLoad(gameObject);
+        FindObjectOfType<SoundManager>().PlayClipOneShot(0);
     }
     public void ExitApp()
     {

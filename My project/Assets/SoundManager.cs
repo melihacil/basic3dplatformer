@@ -43,6 +43,13 @@ public class SoundManager : MonoBehaviour
         s.source.Play();
     }
 
+
+    public void ChangeVolume(float vol, string name)
+    {
+        Sound s  = Array.Find(sounds, x => x.name == name);
+        s.source.volume = vol;
+    }
+
     public void PlayClip(int index,int sourceIndex)
     {
         

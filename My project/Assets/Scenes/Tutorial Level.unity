@@ -2090,7 +2090,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1687258581}
-  m_LocalRotation: {x: 0.24585801, y: 0.015849596, z: -0.004020718, w: 0.96916795}
+  m_LocalRotation: {x: 0.24585804, y: 0.015849564, z: -0.0040207095, w: 0.96916795}
   m_LocalPosition: {x: -0.06049347, y: 4.0231724, z: -8.28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2319,23 +2319,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1914218069 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3272559399593988262, guid: 5ff3f4d70d2272048aef96a7dc432a0f, type: 3}
-  m_PrefabInstance: {fileID: 1276991737}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1914218070
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1914218069}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c123d02892906794d9b81d13db4d28ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1914242552
 GameObject:
   m_ObjectHideFlags: 0
@@ -2646,7 +2629,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1974116523}
-  m_LocalRotation: {x: 0.24585801, y: 0.015849596, z: -0.004020718, w: 0.96916795}
+  m_LocalRotation: {x: 0.24585804, y: 0.015849564, z: -0.0040207095, w: 0.96916795}
   m_LocalPosition: {x: -0.06049347, y: 4.0231724, z: -8.28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2839,6 +2822,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5191420550869083896, guid: 5635244cba8bd1a4f96a19ad98dd364f, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1012619251}
     - target: {fileID: 5191420550869083905, guid: 5635244cba8bd1a4f96a19ad98dd364f, type: 3}
       propertyPath: m_Name
       value: BombingTypeCube

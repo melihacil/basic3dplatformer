@@ -9,7 +9,14 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        DontDestroyOnLoad(gameObject);  
+        DontDestroyOnLoad(gameObject);
+        //
+    }
+
+
+    private void Start()
+    {
+        FindObjectOfType<SoundManager>().PlaySound("MainMenu");
     }
     public void ExitApp()
     {

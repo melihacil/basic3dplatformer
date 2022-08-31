@@ -28,6 +28,7 @@ public class PauseMenu : MonoBehaviour
 
     void Pause()
     {
+        FindObjectOfType<SoundManager>().ChangeVolume(0.100f, "MainMenu");
         pauseMenuPanel.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
@@ -35,6 +36,7 @@ public class PauseMenu : MonoBehaviour
 
     void Resume()
     {
+        FindObjectOfType<SoundManager>().ChangeVolume(0.400f, "MainMenu");
         pauseMenuPanel.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;

@@ -47,7 +47,8 @@ public class PlayerStats : MonoBehaviour
             if (currentHealth <= 0)
             {
                 Debug.Log("Dead");
-                Invoke(nameof(Death_Function), 2f);
+                Destroy(gameObject);
+                //Invoke(nameof(Death_Function), 2f);
             }
             Invoke(nameof(ResetInvincibility), 2f);
         }
@@ -63,6 +64,7 @@ public class PlayerStats : MonoBehaviour
 
     private void ResetInvincibility()
     {
+        Debug.Log("Now can get damaged");
         isInvincible = false;
     }
 

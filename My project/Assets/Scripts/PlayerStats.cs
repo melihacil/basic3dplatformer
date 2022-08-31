@@ -13,6 +13,8 @@ public class PlayerStats : MonoBehaviour
     public int Coins = 0;
 
     public bool hasKey = false;
+
+    private bool isInvincible = false;
     // Start is called before the first frame update
     public Text coinText;
 
@@ -38,11 +40,16 @@ public class PlayerStats : MonoBehaviour
 
     public void damagePlayer(float damage)
     {
-        currentHealth -= damage;
-        if (currentHealth <= 0)
+        if (!isInvincible)
         {
-            Debug.Log("Dead");
-            Invoke(nameof(Death_Function), 2f);
+            isInvincible = true;
+            currentHealth -= damage;
+            if (currentHealth <= 0)
+            {
+                Debug.Log("Dead");
+                Invoke(nameof(Death_Function), 2f);
+            }
+            Invoke(nameof(ResetInvincibility), 2f);
         }
     }
 
@@ -53,6 +60,11 @@ public class PlayerStats : MonoBehaviour
             currentHealth = maxHealth;
     }
 
+
+    private void ResetInvincibility()
+    {
+        isInvincible = false;
+    }
 
     public void Death_Function()
     {

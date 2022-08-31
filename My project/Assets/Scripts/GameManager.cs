@@ -10,10 +10,8 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
-        //
+        
     }
-
-
     private void Start()
     {
         FindObjectOfType<SoundManager>().PlaySound("MainMenu");

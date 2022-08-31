@@ -15,7 +15,7 @@ public class BombScript : MonoBehaviour
         if (!GetComponent<ParticleSystem>().isPlaying)
             GetComponent<ParticleSystem>().Play();
 
-        
+        FindObjectOfType<SoundManager>().PlaySound("bombExplosion");
 
 
         GetComponent<MeshRenderer>().enabled = false;
@@ -30,9 +30,6 @@ public class BombScript : MonoBehaviour
         {
             GetComponent<BoxCollider>().enabled = false;
         }
-
-
-
     }
 
     private void ExplosionCheck()

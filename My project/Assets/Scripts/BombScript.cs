@@ -41,7 +41,7 @@ public class BombScript : MonoBehaviour
         Collider[] colliders = Physics.OverlapSphere(transform.position, radius);
         foreach (Collider nearbyObject in colliders)
         {
-            if (!damaged && nearbyObject.gameObject.tag == "Player")
+            if (!damaged && (nearbyObject.gameObject.tag == "Player" || nearbyObject.gameObject.tag == "Boss"))
             {
                 Debug.Log("Wow");
                 nearbyObject.gameObject.GetComponentInParent<PlayerStats>().damagePlayer(20);

@@ -8,7 +8,7 @@ public class BossScript : MonoBehaviour
 {
 
     public NavMeshAgent agent;
-
+    public float health = 100f;
     public Transform player;
     public Transform shootingPoint;
 
@@ -61,6 +61,18 @@ public class BossScript : MonoBehaviour
         }
 
     }
+
+
+    public void DamageBoss()
+    {
+        health -= 20f;
+
+        if ( health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
 
     private void OnCollisionEnter(Collision collision)
     {

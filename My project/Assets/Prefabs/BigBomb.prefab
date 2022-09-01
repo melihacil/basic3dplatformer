@@ -249,6 +249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 5167141353974739785, guid: 5de48008e31fca14bb5d0f8e4fc201da, type: 3}
   radius: 2
+  damage: 50
 --- !u!199 &-6336680367245755132
 ParticleSystemRenderer:
   serializedVersion: 6

@@ -6,7 +6,7 @@ using UnityEngine.AI;
 
 public class BossScript : MonoBehaviour
 {
-
+    public GameObject key;
     public NavMeshAgent agent;
     public float health = 100f;
     public Transform player;
@@ -77,6 +77,8 @@ public class BossScript : MonoBehaviour
 
         if ( health <= 0)
         {
+            //Instantiate(key);
+            key.transform.position = transform.position;
             Destroy(gameObject);
         }
     }
@@ -153,7 +155,7 @@ public class BossScript : MonoBehaviour
             Rigidbody rb = bomb.GetComponent<Rigidbody>();
             rb.velocity = new Vector3(0, 0, 0);
             // Can be made scaling with distance !! Vector3.Distance(transform.position, player.position);
-            rb.AddForce(shootingPoint.forward * 3f, ForceMode.Impulse);
+            rb.AddForce(shootingPoint.forward * 6f, ForceMode.Impulse);
             rb.AddForce(shootingPoint.up * 4f, ForceMode.Impulse);
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);

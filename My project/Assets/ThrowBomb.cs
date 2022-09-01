@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class ThrowBomb : MonoBehaviour
 {
+    private bool hasFired = false;
     // Start is called before the first frame update
-    void Start()
+    private void OnCollisionEnter(Collision collision)
     {
-        
+        if ( collision.gameObject.tag == "Player")
+        {
+            if ( !hasFired)
+            {
+                hasFired = true;
+            }
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+
+    private void OnCollisionExit(Collision collision)
     {
-        
+        if ( collision.gameObject.tag == "Player")
+        {
+            hasFired = false;
+        }
     }
 }

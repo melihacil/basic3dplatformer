@@ -13,6 +13,8 @@ public class ThrowBomb : MonoBehaviour
             if ( !hasFired)
             {
                 hasFired = true;
+
+                GetComponentInParent<ShootBomb>().Fire();
             }
         }
     }

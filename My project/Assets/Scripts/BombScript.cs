@@ -9,6 +9,8 @@ public class BombScript : MonoBehaviour
     private bool damaged = false;
     private bool checkCollision = false;
 
+    public float damage = 20f;
+
     private void OnCollisionEnter(Collision collision)
     {
 
@@ -44,7 +46,7 @@ public class BombScript : MonoBehaviour
             if (!damaged && nearbyObject.gameObject.tag == "Player")
             {
                 Debug.Log("Wow");
-                nearbyObject.gameObject.GetComponentInParent<PlayerStats>().damagePlayer(20);
+                nearbyObject.gameObject.GetComponentInParent<PlayerStats>().damagePlayer(damage);
                 damaged = true;
             }
             else if (!damaged && nearbyObject.gameObject.tag == "Boss" )

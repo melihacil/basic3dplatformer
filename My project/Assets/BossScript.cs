@@ -138,7 +138,7 @@ public class BossScript : MonoBehaviour
         agent.SetDestination(transform.position);
         //transform.LookAt(player);
 
-        //transform.LookAt(player);
+        transform.LookAt(player);
 
         if (!alreadyAttacked)
         {
@@ -153,8 +153,8 @@ public class BossScript : MonoBehaviour
             Rigidbody rb = bomb.GetComponent<Rigidbody>();
             rb.velocity = new Vector3(0, 0, 0);
             // Can be made scaling with distance !! Vector3.Distance(transform.position, player.position);
-            rb.AddForce(shootingPoint.forward * 6f, ForceMode.Impulse);
-            rb.AddForce(shootingPoint.up * 8f, ForceMode.Impulse);
+            rb.AddForce(shootingPoint.forward * 3f, ForceMode.Impulse);
+            rb.AddForce(shootingPoint.up * 4f, ForceMode.Impulse);
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }

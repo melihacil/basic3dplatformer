@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -49,6 +50,7 @@ public class PlayerStats : MonoBehaviour
                 Debug.Log("Dead");
                 Destroy(gameObject);
                 //Invoke(nameof(Death_Function), 2f);
+                Invoke(nameof(ResetScene), 1.5f);
             }
             Invoke(nameof(ResetInvincibility), 2f);
         }
@@ -86,6 +88,12 @@ public class PlayerStats : MonoBehaviour
     private void DisableText()
     {
         keyText.enabled = false;
+    }
+
+
+    private void ResetScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
 }

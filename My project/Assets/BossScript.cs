@@ -14,7 +14,7 @@ public class BossScript : MonoBehaviour
     public float health = 100f;
     public Transform player;
     public Transform shootingPoint;
-
+    public float yValue = 2;
     public LayerMask whatIsGround, whatIsPlayer;
 
     public Rigidbody rb;
@@ -78,7 +78,9 @@ public class BossScript : MonoBehaviour
         if ( health <= 0)
         {
             //Instantiate(key);
-            key.transform.position = transform.position;
+            //key.transform.position = transform.position;
+
+            Instantiate(key,transform.position + new Vector3 (0,yValue,0), Quaternion.identity);
             Destroy(gameObject);
         }
     }

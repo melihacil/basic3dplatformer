@@ -9,7 +9,7 @@ public class Sound : MonoBehaviour
     public AudioSource source;
     public AudioClip clip;
 
-    public string name;
+    public string soundName;
     public bool loop;
 
     [Range(0f, 1f)]

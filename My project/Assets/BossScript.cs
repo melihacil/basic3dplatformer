@@ -14,7 +14,7 @@ public class BossScript : MonoBehaviour
     public float health = 100f;
     public Transform player;
     public Transform shootingPoint;
-    public float yValue = 2;
+    public float yValue = 1f;
     public LayerMask whatIsGround, whatIsPlayer;
 
     public Rigidbody rb;

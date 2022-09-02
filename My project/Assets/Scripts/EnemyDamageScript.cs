@@ -9,6 +9,7 @@ public class EnemyDamageScript : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         //isPlayer = Physics.Raycast(transform.position, Vector3.up, enemyHeight * 0.5f + 0.2f, whatIsPlayer);
+        //Raycast can be used too but probably it should be used as an update func
         if (collision.gameObject.tag == "Player")
         {
             Debug.Log("Player hopped on enemy");

@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 17
+  controlID: 91
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 18
+  controlID: 92
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -189,8 +189,8 @@ MonoBehaviour:
     y: 0
     width: 309
     height: 573
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -251,7 +251,7 @@ MonoBehaviour:
   - {fileID: 17}
   - {fileID: 18}
   m_Selected: 0
-  m_LastSelected: 2
+  m_LastSelected: 1
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -401,10 +401,10 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 266af5ff1c9af5fff85af6ff065bf6ff1270f6ffba7bf6ffeabef6ff96f7f8ff624df9ff88abfaffcabcfaff20dafaff0861feff6e9bfeff2a9dfeffdcb1feff20c0feff8ec0feff1e09fffffe13ffff8e18fffffc18ffff3260ffff4a8effff908effff0afbffffbed6000012fe000084480100b8480100c2480100c45301006456010070670100966701006e5f0700b263070076650700c6700700e8700700
+      scrollPos: {x: 0, y: 5965}
+      m_SelectedIDs: 2ef7fdffc2f3fdffb4f7fdff7aeefdff
+      m_LastClickedID: -133330
+      m_ExpandedIDs: acfcfdffce5dfeffd2a1feffe438ffffe87cffffa680ffff2c8fffff8291ffff32aaffffe6beffff22c0ffff72d8ffffa4e2fffface3ffff12fbfffff4ffffff9c960100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -675,9 +675,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -38.697414, y: 4.6962714, z: 18.995907}
+    m_Target: {x: -42.57, y: 0.7600006, z: 22.09}
     speed: 2
-    m_Value: {x: -38.697414, y: 4.6962714, z: 18.995907}
+    m_Value: {x: -42.57, y: 0.7600006, z: 22.09}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -724,13 +724,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.20816647, y: 0.10363533, z: -0.022331914, w: -0.97243375}
+    m_Target: {x: -0.26967278, y: 0.20849803, z: -0.0600933, w: -0.9382929}
     speed: 2
-    m_Value: {x: -0.2081457, y: 0.10362499, z: -0.022329686, w: -0.9723367}
+    m_Value: {x: -0.26955545, y: 0.2098843, z: -0.060491707, w: -0.9378855}
   m_Size:
-    m_Target: 3.0210917
+    m_Target: 7.1487865
     speed: 2
-    m_Value: 3.0210917
+    m_Value: 6.8409443
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -894,22 +894,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs/TilemapAssets
+    - Assets/Scripts
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 57
   m_LastFolders:
-  - Assets/Prefabs/TilemapAssets
+  - Assets/Scripts
   m_LastFoldersGridSize: 57
   m_LastProjectPath: C:\Users\Melih\Documents\GitHub\basic3dplatformer\My project
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 27}
-    m_SelectedIDs: 6c920000
-    m_LastClickedID: 37484
-    m_ExpandedIDs: 000000004e900000269200002a92000000ca9a3bffffff7f
+    m_SelectedIDs: 60760000
+    m_LastClickedID: 30304
+    m_ExpandedIDs: 000000008a7400005a7600006676000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -937,7 +937,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000004e900000
+    m_ExpandedIDs: 000000008a740000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1051,7 +1051,7 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -674184
+  m_LastSelectedObjectID: -28288
 --- !u!114 &19
 MonoBehaviour:
   m_ObjectHideFlags: 52

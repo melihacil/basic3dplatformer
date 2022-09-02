@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpikeScript : MonoBehaviour
 {
-    // Start is called before the first frame update
+    //Damages and shoots the player upwards
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.tag == "Player")

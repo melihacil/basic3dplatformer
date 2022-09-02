@@ -5,7 +5,7 @@ using UnityEngine;
 public class ThrowBomb : MonoBehaviour
 {
     private bool hasFired = false;
-    // Start is called before the first frame update
+    //Used on boss ground to kill the boss
     private void OnCollisionEnter(Collision collision)
     {
         if ( collision.gameObject.tag == "Player")

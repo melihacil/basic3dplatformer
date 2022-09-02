@@ -6,12 +6,15 @@ using UnityEngine.AI;
 
 public class BossScript : MonoBehaviour
 {
+
+    //It works similar to enemyai just bigger
+
     public GameObject key;
     public NavMeshAgent agent;
     public float health = 100f;
     public Transform player;
     public Transform shootingPoint;
-
+    public float yValue = 1f;
     public LayerMask whatIsGround, whatIsPlayer;
 
     public Rigidbody rb;
@@ -28,8 +31,6 @@ public class BossScript : MonoBehaviour
     [Header("States")]
     public float sightRange, attackRange;
     public bool playerInSightRange, playerInAttackRange;
-    // Start is called before the first frame update
-
 
     public GameObject projectile;
 
@@ -48,7 +49,6 @@ public class BossScript : MonoBehaviour
         objectPool.Initialize(projectile, 2);
     }
 
-    // Update is called once per frame
     void Update()
     {
         //Checks if the player is in radius of enemy
@@ -78,7 +78,9 @@ public class BossScript : MonoBehaviour
         if ( health <= 0)
         {
             //Instantiate(key);
-            key.transform.position = transform.position;
+            //key.transform.position = transform.position;
+
+            Instantiate(key,transform.position + new Vector3 (0,yValue,0), Quaternion.identity);
             Destroy(gameObject);
         }
     }
@@ -144,10 +146,7 @@ public class BossScript : MonoBehaviour
 
         if (!alreadyAttacked)
         {
-
-
-                Debug.Log("Attacking");
-                //Rigidbody rb = Instantiate(projectile, shootingPoint.position, Quaternion.identity).GetComponent<Rigidbody>();
+            Debug.Log("Attacking");
 
             var bomb = objectPool.CreateObject();
             bomb.transform.position = shootingPoint.position;

@@ -10,13 +10,9 @@ public class SoundManager : MonoBehaviour
     public AudioClip[] clips;
     public Sound[] sounds;
     
-
+    //Soundmanager
     public static SoundManager instance;
 
-
-    //For playing sounds
-    
-    //Need to add main menu music and level music (can be the same music)
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -43,6 +39,11 @@ public class SoundManager : MonoBehaviour
         s.source.Play();
     }
 
+
+    public void PlaySound(int index)
+    {
+        sounds[index].source.Play();
+    }
 
     public void ChangeVolume(float vol, string name)
     {

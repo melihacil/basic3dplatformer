@@ -17,8 +17,8 @@ public class BombScript : MonoBehaviour
         if (!GetComponent<ParticleSystem>().isPlaying)
             GetComponent<ParticleSystem>().Play();
 
-        FindObjectOfType<SoundManager>().PlaySound("bombExplosion");
-
+        //FindObjectOfType<SoundManager>().PlaySound("bombExplosion");
+        FindObjectOfType<SoundManager>().PlaySound(0);
 
         GetComponent<MeshRenderer>().enabled = false;
         GetComponentInChildren<Light>().enabled = false;

@@ -10,7 +10,7 @@ public class SoundManager : MonoBehaviour
     public AudioClip[] clips;
     public Sound[] sounds;
     
-
+    //Soundmanager
     public static SoundManager instance;
 
     private void Awake()

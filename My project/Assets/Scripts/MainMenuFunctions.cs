@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuFunctions : MonoBehaviour
 {
-    // Start is called before the first frame update
+
     public void ExitApp()
     {
         Application.Quit();

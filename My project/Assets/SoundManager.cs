@@ -40,6 +40,11 @@ public class SoundManager : MonoBehaviour
     }
 
 
+    public void PlaySound(int index)
+    {
+        sounds[index].source.Play();
+    }
+
     public void ChangeVolume(float vol, string name)
     {
         Sound s  = Array.Find(sounds, x => x.name == name);

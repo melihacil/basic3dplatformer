@@ -30,7 +30,6 @@ public class EnemyAI : MonoBehaviour
     [Header("States")]
     public float sightRange, attackRange;
     public bool playerInSightRange, playerInAttackRange;
-    // Start is called before the first frame update
 
     private ObjectPool objectPool;
 
